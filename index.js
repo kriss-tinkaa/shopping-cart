@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
 
   function setPrice() {
     totalPrice = amount * priceItem;
-    document.querySelector('.total-price').innerHTML = '$' + totalPrice;
+    document.querySelector('.total-price span').innerHTML = '$' + totalPrice;
     document.querySelector('.cart-total-price').innerHTML = '$' + totalPrice;
   }
 
