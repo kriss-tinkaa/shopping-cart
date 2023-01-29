@@ -107,13 +107,11 @@ function getDate() {
 function showAge(age) {
   let personAgeBlock = document.querySelector('.getGender-age');
   personAgeBlock.classList.remove('show');
-  if (age <= 0) {
-    personAgeBlock.classList.add('show');
-    personAgeBlock.innerHTML = `WRONG`;
-  } else if (age < 18) {
+  if (age < 18) {
     personAgeBlock.classList.add('show');
     personAgeBlock.innerHTML = `You are so young, your age is ${age}`;
   } else {
+    personAgeBlock.classList.add('show');
     personAgeBlock.innerHTML = `You are adults, you are over 18, your age is ${age}`;
   }
 }
