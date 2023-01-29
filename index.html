@@ -28,9 +28,33 @@
           <div class="total">
             <div class="amount">amount: <span>1</span></div>
             <div class="total-price">total: <span>1</span></div>
+            <button type="button" id="pay">Fill your information</button>
           </div>
         </div>
       </main>
+    </div>
+    <div class="overlay">
+      <div id="mainDialog" class="dialog">
+        <div class="dialog--header">
+          <h2>Your Information</h2>
+          <span class="close">close</span>
+        </div>
+        <div class="dialog--body">
+          <select class="getGender">
+            <option value="" selected disabled hidden>Select an option</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+          </select>
+          <div class="getGender-female">
+            <h3>Girls don't ask about it</h3>
+          </div>
+          <div class="getGender-male">
+            <h3>Your birthday</h3>
+            <input class="getDate" type="date" />
+            <p class="getGender-age"></p>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

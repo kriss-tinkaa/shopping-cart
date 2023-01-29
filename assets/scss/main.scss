@@ -1,124 +1,178 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  background: #c2f0f0;
+  height: 75px;
+  text-align: center;
+}
+main {
+  flex: 1;
+  background: #cff0c2;
+  padding: 20px 40px;
+}
+
+.col-2 {
+  display: flex;
+  column-gap: 10px;
+}
+
+.carts-list {
+  max-width: 60%;
+  width: 100%;
+}
+
+// Cart
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 20px;
+  &-title {
+    margin-right: 10px;
+    font-weight: bold;
   }
-
-html, body {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.app{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-header{
-    background: #c2f0f0;
-    height: 75px;
-    text-align: center  ;
-}
-main{
-    flex: 1;
-    background: #cff0c2;
-    padding: 20px 40px;
-}
-
-.col-2{
-    display: flex;
-    column-gap: 10px;
-}
-
-.carts-list{
-    max-width: 60%;
-    width: 100%;
-}
-
-// Cart 
-.cart{
+  &-quantity {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 8px;
-    margin-bottom: 20px;
-    &-title{
-        margin-right: 10px;
-        font-weight: bold;
-    }
-    &-quantity{
-        display: flex;
-        align-items: center;
 
-        input{
-            border: none;
-            background: transparent;
-            margin: 0 6px;
-            text-align: center;
-            width: 25px;
-        }
+    input {
+      border: none;
+      background: transparent;
+      margin: 0 6px;
+      text-align: center;
+      width: 25px;
     }
+  }
 }
 
 // total
-.total{
-    background: #fff;
-    width: calc(40% - 10px);
-    padding: 20px;
+.total {
+  background: #fff;
+  width: calc(40% - 10px);
+  padding: 20px;
+  &-price {
+    margin-bottom: 10px;
+  }
 }
-
 
 //  btns
 
 .plus-btn {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    background: #fff;
-    cursor: pointer;
-    border: 2px solid #095776;
-    &:after {
-        content: '';
-        position: absolute;
-        transform: translate(-50%, -50%);
-        height: 4px;
-        width: 50%;
-        background: #095776;
-        top: 50%;
-        left: 50%;
-      }
-      
-    &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #095776;
-        height: 50%;
-        width: 4px;
-      }
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #095776;
+  &:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: #095776;
+    top: 50%;
+    left: 50%;
   }
 
-  .minus-btn {
-    position: relative;
-    width: 35px;
-    height: 35px;
-    background: #fff;
-    cursor: pointer;
-    border: 2px solid #095776;
-    &:after {
-        content: '';
-        position: absolute;
-        transform: translate(-50%, -50%);
-        height: 4px;
-        width: 50%;
-        background: #095776;
-        top: 50%;
-        left: 50%;
-      }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #095776;
+    height: 50%;
+    width: 4px;
   }
-  
- 
+}
+
+.minus-btn {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #095776;
+  &:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 4px;
+    width: 50%;
+    background: #095776;
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #0a130a9e;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.dialog {
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  padding: 25px;
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}
+
+.close {
+  cursor: pointer;
+}
+
+.getGender {
+  &-female,
+  &-male {
+    margin-top: 15px;
+  }
+  &-female:not(.show),
+  &-male:not(.show),
+  &-age:not(.show) {
+    display: none;
+  }
+}
